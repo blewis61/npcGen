@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script type="text/javascript" src="./name_gen.js"></script>
+
+    <title>NPC Creator</title>
+  </head>
+  <body>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<h1 align="center">NPC Creator</h1>
+
+		<p align="center">In order to use the generator please select the race, gender, and class of the NPC you would like and click "create". This will give you a name, height, weight, age, and base stat points to assign as you see fit.</p>
+
+		<div class="container">
+			<form id="npcForm">
+				<div class="row">
+					<div class="col">
+							<h3>Gender</h3>
+								<input type="radio" id="genderRadio" value="Male" checked> Male<br>
+								<input type="radio" id="genderRadio" value="Female">Female<br>
+						</div>
+
+						<div class="col">
+							<h3>Race</h3>
+								<input type="radio" id="raceRadio" value="Dwarf" checked>Dwarf<br>
+								<input type="radio" id="raceRadio" value="Elf">Elf<br>
+								<input type="radio" id="raceRadio" value="Gnome">Gnome<br>
+								<input type="radio" id="raceRadio" value="Half-Elf">Half-Elf<br>
+								<input type="radio" id="raceRadio" value="Half-Orc">Half-Orc<br>
+								<input type="radio" id="raceRadio" value="Halfling">Halfling<br>
+								<input type="radio" id="raceRadio" value="Human">Human<br>
+						</div>
+
+						<div class="col">
+							<h3>Class</h3>
+								<input type="radio" id="classRadio" value="Cleric" checked>Cleric<br>
+								<input type="radio" id="classRadio" value="Bard">Bard<br>
+								<input type="radio" id="classRadio" value="Barbarian">Barbarian<br>
+								<input type="radio" id="classRadio" value="Fighter">Fighter<br>
+								<input type="radio" id="classRadio" value="Druid">Druid<br>
+								<input type="radio" id="classRadio" value="Rogue">Rogue<br>
+								<input type="radio" id="classRadio" value="Monk">Monk<br>
+								<input type="radio" id="classRadio" value="Paladin">Paladin<br>
+								<input type="radio" id="classRadio" value="Ranger">Ranger<br>
+								<input type="radio" id="classRadio" value="Sorcerer">Sorcerer<br>
+								<input type="radio" id="classRadio" value="Wizard">Wizard<br>
+						</div>
+
+						<div>
+							<button onclick="createNPC()">Create NPC</button>
+						</div>
+				</div>			
+			</form>
+		</div>
+
+		<br>
+		<br>
+
+		<div class="container">
+			<div form id="npcOutput">
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Name: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="nameOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Gender: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="genderOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Race: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="raceOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Class: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="classOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Age: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="ageOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Height: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="heightOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Weight: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="weightOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Eye Color: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="eyeOutput" readonly>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">
+						<p>Hair Color: </p>
+					</div>
+
+					<div class="col-md-1">
+						<input type="text" id="hairOutput" readonly>
+					</div>
+				</div>
+			</div>	
+		</div>
+				
+	</body>
+</html>
