@@ -29,11 +29,12 @@ var randomChar = {
 		}
 
 	function createNPC(e) {
-		return randomChar.baseAbilityRolls();
-		return randomChar.genderSelection();
-		return randomChar.raceSelection();
-		return randomChar.classSelection();
-		console.log('test')
+		console.log('test1');
+		randomChar.baseAbilityRolls();
+		randomChar.genderSelection();
+		randomChar.raceSelection();
+		randomChar.classSelection();
+		console.log('test2');
 		e.preventDefault();
 	}
 
