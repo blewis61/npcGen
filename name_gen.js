@@ -37,11 +37,6 @@ var randomChar = {
 		e.preventDefault();
 	}
 
-<<<<<<< HEAD
-//testing commit 
-=======
->>>>>>> 23dc00da70fb45c4f6a4975d94bc72d8b58e8355
-
 
 	//elements needed:
 
