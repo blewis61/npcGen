@@ -16,15 +16,15 @@ var randomChar = {
 		},
 	
 		genderSelection: function() {
-			document.querySelector('#genderOutput').value = document.querySelector('#genderRadio').value
+			document.querySelector('#genderOutput').value = document.querySelector(["name=genderRadio]:checked"]).value
 			},
 
 		raceSelection: function() {
-			document.querySelector('#raceOutput').value = document.querySelector('#raceRadio').value
+			document.querySelector('#raceOutput').value = document.querySelector(["name=raceRadio:checked"]).value
 			},
 
-		classSelection: function() {
-			document.querySelector('#classOutput').value = document.querySelector('#classRadio').value
+		classSelection: function() {	
+			document.querySelector('#classOutput').value = document.querySelector(["name=classRadio:checked"]).value
 			},
 		}
 
