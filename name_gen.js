@@ -22,19 +22,19 @@ var randomChar = {
 
 		charAge: function() {
 			if(this.classSelection === "Dwarf") {
-				return baseAge(43, 82);
+				randomChar.baseAge(43, 82);
 			} else if (this.classSelection === "Elf") {
-				return baseAge(114, 170);
+				randomChar.baseAge(114, 170);
 			} else if (this.classSelection === "Gnome") {
-				return baseAge(44, 94);
+				randomChar.baseAge(44, 94);
 			} else if (this.classSelection === "Half-Elf") {
-						return baseAge(21, 38);
+				randomChar.baseAge(21, 38);
 			} else if (this.classSelection === "Half-Orc") {
-				return baseAge(15, 26);
+				randomChar.baseAge(15, 26);
 			} else if (this.classSelection === "Halfling") {
-				return baseAge(22, 44);
+				randomChar.baseAge(22, 44);
 			} else if (this.classSelection === "Human") {
-				return baseAge(16, 27);
+				randomChar.baseAge(16, 27);
 			} 
 		},
 
