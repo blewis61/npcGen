@@ -17,22 +17,23 @@ var randomChar = {
 
 		baseAge: function(min, max) {
 					var age = Math.floor(Math.random() * (max - min));
+					return age;
 				},
 
 		charAge: function() {
-			if(genderSelection === "Dwarf") {
+			if(this.classSelection === "Dwarf") {
 				return baseAge(43, 82);
-			} else if (genderSelection === "Elf") {
+			} else if (this.classSelection === "Elf") {
 				return baseAge(114, 170);
-			} else if (genderSelection === "Gnome") {
+			} else if (this.classSelection === "Gnome") {
 				return baseAge(44, 94);
-			} else if (genderSelection === "Half-Elf") {
+			} else if (this.classSelection === "Half-Elf") {
 						return baseAge(21, 38);
-			} else if (genderSelection === "Half-Orc") {
+			} else if (this.classSelection === "Half-Orc") {
 				return baseAge(15, 26);
-			} else if (genderSelection === "Halfling") {
+			} else if (this.classSelection === "Halfling") {
 				return baseAge(22, 44);
-			} else if (genderSelection === "Human") {
+			} else if (this.classSelection === "Human") {
 				return baseAge(16, 27);
 			} 
 		},
