@@ -14,27 +14,56 @@ var randomChar = {
 			}	
 		return results;
 		},
-	
+
+		baseAge: function(min, max) {
+					var age = Math.floor(Math.random() * (max - min));
+				},
+
+		charAge: function() {
+			if(genderSelection === "Dwarf") {
+				return baseAge(43, 82);
+			} else if (genderSelection === "Elf") {
+				return baseAge(114, 170);
+			} else if (genderSelection === "Gnome") {
+				return baseAge(44, 94);
+			} else if (genderSelection === "Half-Elf") {
+						return baseAge(21, 38);
+			} else if (genderSelection === "Half-Orc") {
+				return baseAge(15, 26);
+			} else if (genderSelection === "Halfling") {
+				return baseAge(22, 44);
+			} else if (genderSelection === "Human") {
+				return baseAge(16, 27);
+			} 
+		},
+
 		genderSelection: function() {
-			document.querySelector('#genderOutput').value = document.querySelector(["name=genderRadio]:checked"]).value
+			document.querySelector('#genderOutput').value = document.querySelector("[name=genderRadio]:checked").value;
 			},
 
 		raceSelection: function() {
-			document.querySelector('#raceOutput').value = document.querySelector(["name=raceRadio:checked"]).value
+			document.querySelector('#raceOutput').value = document.querySelector("[name=raceRadio]:checked").value;
 			},
 
 		classSelection: function() {	
-			document.querySelector('#classOutput').value = document.querySelector(["name=classRadio:checked"]).value
+			document.querySelector('#classOutput').value = document.querySelector("[name=classRadio]:checked").value;
+			},
+
+		baseAbilityStats: function() {
+			document.querySelector('#baseStatsOutput').value = randomChar.baseAbilityRolls();
+			},
+
+		charAgeOutput: function() {
+			document.querySelector('#ageOutput').value = randomChar.charAge();
 			},
 		}
 
 	function createNPC(e) {
-		console.log('test1');
-		randomChar.baseAbilityRolls();
+		randomChar.baseAbilityStats();
 		randomChar.genderSelection();
 		randomChar.raceSelection();
 		randomChar.classSelection();
-		console.log('test2');
+		randomChar.charAgeOutput();
 		e.preventDefault();
 	}
 
