@@ -20,22 +20,24 @@ var randomChar = {
 					return age;
 				},
 
+		//potentially refactor this using a switch statement later.
 		charAge: function() {
 			if(this.classSelection === "Dwarf") {
-				randomChar.baseAge(43, 82);
-			} else if (this.classSelection === "Elf") {
-				randomChar.baseAge(114, 170);
-			} else if (this.classSelection === "Gnome") {
-				randomChar.baseAge(44, 94);
-			} else if (this.classSelection === "Half-Elf") {
-				randomChar.baseAge(21, 38);
-			} else if (this.classSelection === "Half-Orc") {
-				randomChar.baseAge(15, 26);
-			} else if (this.classSelection === "Halfling") {
-				randomChar.baseAge(22, 44);
-			} else if (this.classSelection === "Human") {
-				randomChar.baseAge(16, 27);
+				return this.randomChar.baseAge(43, 82);
+			} else if (this.raceSelection === "Elf") {
+				return this.randomChar.baseAge(114, 170);
+			} else if (this.raceSelection === "Gnome") {
+				return this.randomChar.baseAge(44, 94);
+			} else if (this.raceSelection === "Half-Elf") {
+				return this.randomChar.baseAge(21, 38);
+			} else if (this.raceSelection === "Half-Orc") {
+				return this.randomChar.baseAge(15, 26);
+			} else if (this.raceSelection === "Halfling") {
+				return this.randomChar.baseAge(22, 44);
+			} else if (this.raceSelection === "Human") {
+				return this.randomChar.baseAge(16, 27);
 			} 
+
 		},
 
 		genderSelection: function() {
