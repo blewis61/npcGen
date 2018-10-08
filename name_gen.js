@@ -15,6 +15,7 @@ var randomChar = {
 		return results;
 		},
 
+		//returning numbers less than min - need to figure out why.
 		baseAge: function(min, max) {
 					var age = Math.floor(Math.random() * (max - min));
 					return age;
@@ -22,51 +23,50 @@ var randomChar = {
 
 		//potentially refactor this using a switch statement later.
 		charAge: function() {
-			if(this.classSelection === "Dwarf") {
-				return this.randomChar.baseAge(43, 82);
-			} else if (this.raceSelection === "Elf") {
-				return this.randomChar.baseAge(114, 170);
-			} else if (this.raceSelection === "Gnome") {
-				return this.randomChar.baseAge(44, 94);
-			} else if (this.raceSelection === "Half-Elf") {
-				return this.randomChar.baseAge(21, 38);
-			} else if (this.raceSelection === "Half-Orc") {
-				return this.randomChar.baseAge(15, 26);
-			} else if (this.raceSelection === "Halfling") {
-				return this.randomChar.baseAge(22, 44);
-			} else if (this.raceSelection === "Human") {
-				return this.randomChar.baseAge(16, 27);
+			if(this.raceSelection === "Dwarf") {
+				return this.baseAge(43, 82);
+			} else if (this.raceSelection.value === "Elf") {
+				return this.baseAge(114, 170);
+			} else if (this.raceSelection.value === "Gnome") {
+				return this.baseAge(44, 94);
+			} else if (this.raceSelection.value === "Half-Elf") {
+				return this.baseAge(21, 38);
+			} else if (this.raceSelection.value === "Half-Orc") {
+				return this.baseAge(15, 26);
+			} else if (this.raceSelection.value === "Halfling") {
+				return this.baseAge(22, 44);
+			} else if (this.raceSelection.value === "Human") {
+				return this.baseAge(16, 27);
 			} 
-
 		},
 
-		genderSelection: function() {
-			document.querySelector('#genderOutput').value = document.querySelector("[name=genderRadio]:checked").value;
-			},
+		//returning numbers less than min - need to figure out why.
+		baseHeight: function(min, max) {
+			var feet = Math.floor(Math.random() * (max - min));
+			var inches = Math.floor(Math.random() * 11);
+			var height = ft + " feet " + inches + " in"; 
+			return height;
+		},
 
-		raceSelection: function() {
-			document.querySelector('#raceOutput').value = document.querySelector("[name=raceRadio]:checked").value;
-			},
+		userSelections: function() {
+			this.raceSelection = document.querySelector("[name=raceRadio]:checked");
+			this.genderSelection = document.querySelector("[name=genderRadio]:checked");
+			this.classSelection = document.querySelector("[name=classRadio]:checked");
+		},
 
-		classSelection: function() {	
-			document.querySelector('#classOutput').value = document.querySelector("[name=classRadio]:checked").value;
-			},
-
-		baseAbilityStats: function() {
-			document.querySelector('#baseStatsOutput').value = randomChar.baseAbilityRolls();
-			},
-
-		charAgeOutput: function() {
-			document.querySelector('#ageOutput').value = randomChar.charAge();
-			},
+		fillInForm: function() {
+			document.querySelector('#raceOutput') = this.raceSelection;
+			document.querySelector('#genderOutput') = this.genderSelection;
+			document.querySelector('#classOutput') = this.classSelection;
+			document.querySelector('#basetatsOutput') = this.baseAbilityRolls;
+			document.querySelector('#agOutput') = this.charAge;
 		}
 
+	}
+
 	function createNPC(e) {
-		randomChar.baseAbilityStats();
-		randomChar.genderSelection();
-		randomChar.raceSelection();
-		randomChar.classSelection();
-		randomChar.charAgeOutput();
+		randomChar.userSelections();
+		randomChar.fillInForm();
 		e.preventDefault();
 	}
 
