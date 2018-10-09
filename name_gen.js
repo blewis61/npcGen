@@ -103,7 +103,22 @@ var randomChar = {
 			}
 		},
 
+		charHairColor: function() {
+			var colors = ['brown', 'black', 'blonde', 'auburn', 'golden', 'dusty', 'grey',
+			'salt & pepper', 'white', 'red', 'dirty blonde'];
 
+			var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+			return randomColor;
+		},
+
+		charEyeColor: function() {
+			var colors = ['brown', 'hazel', 'blue', 'green', 'silver', 'amber'];
+
+			var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+			return randomColor;
+		},
 
 		userSelections: function() {
 			this.raceSelection = document.querySelector("[name=raceRadio]:checked").value;
@@ -119,7 +134,9 @@ var randomChar = {
 			document.querySelector('#ageOutput').value = this.charAge();
 			document.querySelector('#heightOutput').value = this.charHeight();
 			document.querySelector('#weightOutput').value = this.charWeight();
-		}
+			document.querySelector('#hairOutput').value = this.charHairColor();
+			document.querySelector('#eyeOutput').value = this.charEyeColor();
+		},
 
 	}
 
